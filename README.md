@@ -8,6 +8,9 @@ Carrito
 
 Tablas:
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/5376adcf-e5e1-4853-a94d-a47d352e68a9" />
-CATEGORIA
+Categoria
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9143a47d-9c9b-4dae-b1db-c16a3d2bd418" />
 
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/56b93bc9-9294-4f4e-982b-5a924be77b87" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/37c57948-3c34-44cf-991f-7f94cd4f0d50" />
+Marca
