@@ -1,0 +1,102 @@
+
+CREATE DATABASE CarritoDeCompras
+
+USE CarritoDeCompras
+
+CREATE TABLE PROVINCIA(
+IdProvincia INT IDENTITY(1,1),
+Descripcion VARCHAR(100),
+IdDepartamento INT --FK
+)
+
+CREATE TABLE DISTRITO(
+IdDistrito INT IDENTITY(1,1),
+Descripcion VARCHAR(100),
+IdProvincia INT,
+IdDepartamento INT
+)
+
+CREATE TABLE DEPARTAMENTO(
+IdDepartamento INT IDENTITY(1,1),
+Descripcion VARCHAR(100)
+)
+
+CREATE TABLE USUARIO(
+IdUsuario INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+Nombres VARCHAR(100),
+Apellidos VARCHAR(100),
+Correo VARCHAR(100),
+Clave VARCHAR(100),
+Reestablecer VARCHAR(100),
+Activo BIT DEFAULT 1,
+FechaRegistro DATETIME DEFAULT GETDATE()
+)
+
+--Tablas Relacionadas
+CREATE TABLE CATEGORIA(
+IdCategoria INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+Descripcion VARCHAR(100),
+Activo BIT DEFAULT 1,
+FechaDeRegistro DATETIME DEFAULT GETDATE()
+)
+
+CREATE TABLE MARCA(
+IdMarca INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+Descripcion VARCHAR(100),
+Activo BIT DEFAULT 1,
+FechaRegistro DATETIME DEFAULT GETDATE()
+)
+
+CREATE TABLE CARRITO(
+IdCarrito INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+IdCliente INT, --FK
+IdProducto INT, --FK
+Cantidad INT --FK
+)
+
+CREATE TABLE PRODUCTO(
+IdProducto INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+Nombre VARCHAR(100),
+Descripcion VARCHAR(200),
+IdMarca INT, --FK
+IdCategoria INT, --FK
+Precio Decimal(10,2),
+Stock INT,
+RutaImagen VARCHAR(100),
+NombreImagen VARCHAR(100),
+Activo BIT DEFAULT 1,
+FechaRegistro DATETIME DEFAULT GETDATE()
+)
+
+CREATE TABLE CLIENTE(
+IdCliente INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+Nombres VARCHAR(100),
+Apellidos VARCHAR(100),
+Correo VARCHAR(100),
+Clave VARCHAR(100),
+FechaRegistro DATETIME DEFAULT GETDATE(),
+Reestablecer VARCHAR(100)
+)
+
+CREATE TABLE VENTA(
+IdVenta INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+IdCliente INT, --FK
+TotalProducto INT,
+MontoTotal Decimal(10,2),
+Contacto VARCHAR(100),
+IdDistrito INT, --FK
+Telefono VARCHAR(50),
+Direccion VARCHAR(200),
+FechaVenta DATETIME DEFAULT GETDATE(),
+IdTransaccion INT
+)
+
+CREATE TABLE DETALLE_VENTA(
+IdDetalleVenta INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+IdVenta INT, --FK
+IdProducto INT, --FK
+Cantidad INT,
+Total Decimal(10,2)
+)
+
+--Relaciones
