@@ -14,3 +14,16 @@ Categoria
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/56b93bc9-9294-4f4e-982b-5a924be77b87" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/37c57948-3c34-44cf-991f-7f94cd4f0d50" />
 Marca
+
+
+1-Crear Las Entidades
+2-Conectar Con La Db
+3-Correr Comandos
+4-Instalar Paquete:
+	+Microsoft.EntityFrameworkCore.Tools
+	Microsoft.EntityFrameworkCore
+	Microsoft.EntityFrameworkCore.SqlServer
+	Microsoft.EntityFrameworkCore.Design
+5-Crear El AppDbContext
+6-Add-Migration
+Update-Database****
