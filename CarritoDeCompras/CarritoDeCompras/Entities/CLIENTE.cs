@@ -10,7 +10,7 @@
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
         public string Reestablecer { get; set; }
 
-        //Mapa De Navegacion
+        //Colección inversa
         public ICollection<CARRITO> CARRITO { get; set; }
         public ICollection<VENTA> VENTA { get; set; }
 

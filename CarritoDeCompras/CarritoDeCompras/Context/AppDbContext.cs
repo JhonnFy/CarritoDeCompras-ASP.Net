@@ -141,8 +141,11 @@ namespace CarritoDeCompras.Context
                 i.Property("FechaVenta");
                 i.Property("IdTransaccion");
 
-                i.HasOne(i => i.CLIENTE).WithMany().HasForeignKey(i => i.IdCliente)
+                i.HasOne(v => v.CLIENTE)
+                .WithMany(cl => cl.VENTA) //Colección Inversa
+                .HasForeignKey(v => v.IdCliente)
                 .OnDelete(DeleteBehavior.Restrict);
+
             });
 
             modelBuilder.Entity<CLIENTE>(j =>
@@ -165,10 +168,15 @@ namespace CarritoDeCompras.Context
                 k.Property("IdProducto"); /*Fk*/
                 k.Property("Cantidad");
 
-                k.HasOne(k => k.PRODUCTO).WithMany().HasForeignKey(k => k.IdProducto)
-                .OnDelete(DeleteBehavior.Restrict);
+                // Relación con PRODUCTO
+                k.HasOne(c => c.PRODUCTO)
+                 .WithMany(p => p.CARRITO)  // Colección inversa en PRODUCTO
+                 .HasForeignKey(c => c.IdProducto)
+                 .OnDelete(DeleteBehavior.Restrict);
 
-                k.HasOne(k => k.Cliente).WithMany().HasForeignKey(k => k.IdCliente)
+                k.HasOne(c => c.Cliente)
+                .WithMany(cl => cl.CARRITO) //Colección Inversa
+                .HasForeignKey(c=> c.IdCliente)
                 .OnDelete(DeleteBehavior.Restrict);
             });
         }

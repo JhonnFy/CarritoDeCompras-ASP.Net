@@ -18,5 +18,7 @@
         public MARCA MARCA { get; set; }
         public CATEGORIA CATEGORIA { get; set; }
 
+        //Colección inversa
+        public ICollection<CARRITO> CARRITO { get; set; }
     }
 }
