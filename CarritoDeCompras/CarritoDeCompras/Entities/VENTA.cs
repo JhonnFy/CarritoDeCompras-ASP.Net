@@ -5,6 +5,7 @@ namespace CarritoDeCompras.Entities
     public class VENTA
     {
         public int IdVenta { get; set; }
+        public int IdCliente { get; set; }
         public int TotalProducto { get; set; }
         public decimal MontoTotal { get; set; }
         public string Contacto { get; set; }
