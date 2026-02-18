@@ -10,7 +10,7 @@ namespace CarritoDeCompras.Models
         public int IdCategoria { get; set; }
         [Required]
         public string Descripcion { get; set; }
-        public bool Activo { get; set; }
+        public bool Activo { get; set; } = true;
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
     }
 }
